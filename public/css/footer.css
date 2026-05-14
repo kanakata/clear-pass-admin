@@ -1,0 +1,66 @@
+/* ============================================================
+     FOOTER
+     ============================================================ */
+.footer {
+  background: var(--bg-sec);
+  color: rgba(255, 255, 255, 0.5);
+  padding: 60px 0 30px;
+  margin-top: auto;
+  border-top: 1px solid var(--grey-100);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.footer-logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 20px;
+  color: var(--amber);
+  margin-bottom: 10px;
+}
+.footer-desc {
+  font-size: 14px;
+  max-width: 260px;
+  line-height: 1.7;
+  color: var(--navy);
+}
+.footer-col-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 14px;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.footer-links a {
+  color: var(--amber);
+  font-size: 14px;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.footer-links a:hover {
+  color: var(--amber);
+}
+.footer-bottom {
+  border-top: 1px solid var(--amber);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 13px;
+  & span{
+    color: var(--accent);
+    padding: 5px;
+  }
+}

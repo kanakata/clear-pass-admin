@@ -1,7 +1,5 @@
 {
-  "extends": [
-    "development"
-  ],
+  "extends": ["development"],
   "hints": {
     "axe/forms": [
       "default",
@@ -13,5 +11,3 @@
     "no-inline-styles": "off"
   }
 }
-
-how can i cahe data in php to prevent quering the database often cause every time i load a page that requires content from a database like no of users a query is made , or am i wrong 

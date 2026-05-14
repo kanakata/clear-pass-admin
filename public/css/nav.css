@@ -1,0 +1,84 @@
+/* nav */
+nav {
+    height: 70px;
+    width: 100%;
+    background: var(--bg-sec);
+    border-bottom: 1px solid var(--grey-500);
+    display: flex;
+    align-items: center;
+    padding: 0px 10px 0px 10px;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    transition: 1s;
+    justify-content: space-between;
+    box-shadow: var(--shadow);
+    & h2 {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: var(--txt-pri);
+      font-size: 20px;
+      font-family: calibri;
+      & img {
+        height: 30px;
+        width: 30px;
+      }
+    }
+    & .links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      & .sun_moon {
+        display: flex;
+        align-items: center;
+        & .weather {
+          height: 20px;
+          width: 20px;
+        }
+      }
+    }
+    & .links .mode {
+      height: 20px;
+      width: 40px;
+      padding: 1px;
+      border-radius: 10px;
+      background: var(--amber);
+      display: flex;
+      justify-content: flex-start;
+      box-shadow: var(--shadow);
+      & .mode_set {
+        height: 100%;
+        width: 50%;
+        border-radius: 50%;
+        background: var(--bg-sec);
+        cursor: pointer;
+        box-shadow: var(--shadow);
+      }
+    }
+    & .mode.clicked {
+      justify-content: flex-end;
+    }
+    & .links a {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      height: 40px;
+      padding: 0px 5px;
+      background: var(--amber);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: var(--bg-sec);
+      font-size: 15px;
+      text-transform: capitalize;
+      box-shadow: var(--shadow);
+      & img {
+        height: 20px;
+        width: 20px;
+      }
+    }
+  }

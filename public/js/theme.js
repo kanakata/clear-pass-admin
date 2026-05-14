@@ -10,7 +10,6 @@ if (setTheme == 'dark') {
 } else if (setTheme == 'light') {
   document.querySelector('body').setAttribute('class', '');
   weather.setAttribute('src', './assets/icons/sun.png');
-  // themeToggle.parentElement.classList.toggle("")
 }
 
 themeToggle.addEventListener('click', () => {

@@ -1,0 +1,3 @@
+Error (database connection): could not find driver, on file: C:\xampp\htdocs\pegpem_admin\app\Models\Database\Database.php, on line: 31 on : 26/04/30 12:51:02 PM.
+Error (database connection): SQLSTATE[HY000] [1049] Unknown database 'pegpe.com', on file: C:\xampp\htdocs\pegpem_admin\app\Models\Database\Database.php, on line: 31 on : 26/04/30 12:57:59 PM.
+Error (database connection): SQLSTATE[HY000] [1049] Unknown database 'pegpe.com', on file: C:\xampp\htdocs\pegpem_admin\app\Models\Database\Database.php, on line: 31 on : 26/04/30 12:58:01 PM.

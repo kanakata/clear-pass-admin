@@ -1,140 +1,13 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --bg-pri: #f8fafc;
-  --bg-sec: #ffffff;
-  --accent: #6366f1;
-  --txt-pri: #1e293b;
-  --txt-sec: #64748b;
-  --success: #22c55e;
-  --danger: #ef4444;
-  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-}
-
-::-webkit-scrollbar {
-  background: transparent;
-  width: 10px;
-}
-::-webkit-scrollbar-thumb {
-  background: var(--txt-sec);
-  border-radius: 10px;
-}
-
-body.dark {
-  --bg-pri: #0f172a;
-  --bg-sec: #1e293b;
-  --txt-pri: #f1f5f9;
-  --txt-sec: #94a3b8;
-  --accent: #818cf8;
-  --shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3);
-}
-body.scroll_false {
-  overflow-y: hidden;
-}
-
-body {
-  background: var(--bg-pri);
-  color: var(--txt-pri);
-  line-height: 1.6;
-  margin-top: 65px;
-  font-family: calibri;
-  position: relative;
-}
-
-/* nav */
-nav {
-  height: 60px;
-  width: 100%;
-  background: var(--bg-sec);
-  display: flex;
-  align-items: center;
-  padding: 0px 10px 0px 10px;
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  left: 0;
-  transition: 1s;
-  justify-content: space-between;
-  box-shadow: var(--shadow);
-  & h2 {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    color: var(--txt-pri);
-    font-size: 20px;
-    font-family: calibri;
-    & img {
-      height: 30px;
-      width: 30px;
-    }
-  }
-  & .links {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    & .sun_moon {
-      display: flex;
-      align-items: center;
-      & .weather {
-        height: 20px;
-        width: 20px;
-      }
-    }
-  }
-  & .links .mode {
-    height: 20px;
-    width: 40px;
-    padding: 1px;
-    border-radius: 10px;
-    background: var(--bg-pri);
-    display: flex;
-    justify-content: flex-start;
-    box-shadow: var(--shadow);
-    & .mode_set {
-      height: 100%;
-      width: 50%;
-      border-radius: 50%;
-      background: var(--bg-sec);
-      cursor: pointer;
-      box-shadow: var(--shadow);
-    }
-  }
-  & .mode.clicked {
-    justify-content: flex-end;
-  }
-  & .links a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    height: 30px;
-    padding: 0px 5px;
-    background: var(--bg-pri);
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: var(--txt-sec);
-    font-size: 18px;
-    text-transform: capitalize;
-    box-shadow: var(--shadow);
-    & img {
-      height: 20px;
-      width: 20px;
-    }
-  }
-}
+@import url("./config.css");
+@import url("./nav.css");
+@import url("./footer.css");
 
 .welcome {
   width: 100%;
   text-align: center;
   color: var(--txt-sec);
-  margin-top: 0px;
-  font-size: 18px;
+  margin-top: 75px;
+  font-size: 20px;
 }
 
 .date {
@@ -179,8 +52,7 @@ nav {
 
 /* form style */
 header {
-  min-height: 100vh;
-  margin: 10px 0px;
+  margin: 20px 0px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -191,10 +63,10 @@ header {
     position: relative;
     display: flex;
     width: 90%;
-    height: auto;
-    background: linear-gradient(to right, var(--bg-sec) 50%, transparent);
+    background: linear-gradient(to right, var(--bg-pri) 50%, transparent);
     box-shadow: var(--shadow);
     border-radius: 10px;
+    border: 1px solid var(--amber-light);
     overflow: hidden;
     & .school_pic {
       width: 100%;
@@ -212,7 +84,7 @@ header {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 15px;
+      gap: 10px;
       flex-direction: column;
       z-index: 90;
       height: 100%;
@@ -239,7 +111,7 @@ header {
           width: 40px;
         }
         & h2 {
-          color: var(--txt-pri);
+          color: var(--amber-light);
           font-size: 30px;
           text-transform: capitalize;
           display: flex;
@@ -252,7 +124,7 @@ header {
           }
         }
         & h3 {
-          color: var(--txt-pri);
+          color: var(--amber-light);
           font-size: 15px;
           text-transform: capitalize;
           display: flex;
@@ -279,26 +151,30 @@ header {
       & label {
         display: flex;
         align-items: center;
+        justify-content: flex-start;
         gap: 10px;
-        height: 40px;
+        height: 50px;
         width: 90%;
-        background: var(--bg-pri);
-        box-shadow: var(--shadow);
-        border-radius: 5px;
         & img {
-          height: 30px;
-          width: 30px;
-          margin-left: 10px;
+          height: 100%;
+          width: 50px;
+
+          background: var(--amber);
+          border-radius: 2px;
+          padding: 5px;
         }
         & input {
           width: 100%;
           height: 100%;
           outline: none;
           border: none;
-          background: transparent;
-          color: var(--txt-sec);
+          background: var(--amber);
+          border-radius: 2px;
+          color: var(--txt-pri);
           font-size: 18px;
           text-transform: lowercase;
+          padding-left: 10px;
+
         }
         & input::placeholder {
           font-size: 18px;
@@ -306,42 +182,25 @@ header {
       }
       & input[type='submit'] {
         width: 90%;
-        height: 40px;
+        height: 50px;
         border-radius: 5px;
         border: none;
         outline: none;
         font-size: 18px;
-        background: var(--bg-pri);
-        color: var(--txt-pri);
+        background: var(--amber);
+        color: var(--bg-sec);
         box-shadow: var(--shadow);
         font-weight: bolder;
-        font-family: cursive;
         cursor: pointer;
+      }
+      & input::placeholder {
+        color: white;
       }
       & input[type='submit']:hover {
         background: var(--accent);
         cursor: pointer;
       }
     }
-  }
-}
-
-/* footer */
-footer {
-  background: var(--bg-sec);
-  width: 100%;
-  height: auto;
-  padding: 10px 10px 10px 10px;
-  box-shadow: var(--shadow);
-  position: relative;
-  & h2 {
-    color: var(--txt-pri);
-    font-size: 18px;
-  }
-  & a {
-    color: blue;
-    font-weight: bolder;
-    font-size: 18px;
   }
 }
 
@@ -356,7 +215,7 @@ footer {
   & div {
     width: 49%;
     color: var(--txt-pri);
-    background: var(--bg-sec);
+    background: var(--amber);
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -391,6 +250,7 @@ footer {
   background: var(--bg-sec);
   color: var(--txt-pri);
   box-shadow: var(--shadow);
+  border: 1px solid var(--amber);
   & h1,
   h2,
   h3 {
@@ -430,8 +290,8 @@ footer {
     width: 49%;
     border-radius: 5px;
     overflow: hidden;
-    background: var(--bg-sec);
-    color: var(--txt-sec);
+    background: var(--amber);
+    color: var(--bg-pri);
     box-shadow: var(--shadow);
     & .department {
       font-size: 25px;
@@ -612,7 +472,8 @@ footer {
       box-shadow: var(--shadow);
       border-radius: 3px;
       padding: 5px;
-      font-size: 12px;
+      height: 50px;
+      border: 1px solid var(--amber);
       & a {
         text-decoration: none;
       }
@@ -634,6 +495,7 @@ footer {
   border-radius: 5px;
   box-shadow: var(--shadow);
   padding: 10px 5px;
+  border: 1px solid var(--amber);
 }
 
 .searchoutput {
@@ -655,6 +517,8 @@ footer {
       background: var(--bg-pri);
       border-radius: 5px;
       box-shadow: var(--shadow);
+      height: 50px;
+      border: 1px solid var(--amber);
     }
     & td {
       background: var(--bg-pri);
@@ -663,6 +527,8 @@ footer {
       padding-left: 2px;
       border-radius: 5px;
       box-shadow: var(--shadow);
+      height: 50px;
+      border: 1px solid var(--amber);
       & a {
         color: white;
         text-decoration: none;
@@ -682,20 +548,25 @@ footer {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+
   & label {
     width: 100%;
-    height: 40px;
+    height: 50px;
     text-transform: capitalize;
     font-size: 18px;
     display: flex;
     align-items: center;
-    background: var(--bg-pri);
+    background: var(--navy);
+    border: 1px solid var(--amber);
     box-shadow: var(--shadow);
     border-radius: 5px;
-    padding-left: 10px;
+    padding-left: 5px;
     & img {
-      height: 30px;
-      width: 30px;
+      height: 40px;
+      width: 40px;
+      background: var(--amber);
+      padding: 5px;
+      border-radius: 2px;
     }
     & input {
       height: 100%;
@@ -707,17 +578,17 @@ footer {
       border-radius: 5px;
       padding-left: 10px;
       background: transparent;
-      color: var(--txt-pri);
+      color: var(--amber);
     }
     & input::placeholder {
       padding-left: 10px;
       text-transform: uppercase;
       font-size: 15px;
-      color: var(--txt-pri);
+      color: var(--amber);
     }
   }
   & input[type='submit'] {
-    height: 40px;
+    height: 50px;
     width: 200px;
     outline: none;
     margin-top: 5px;
@@ -725,13 +596,15 @@ footer {
     text-transform: capitalize;
     border: none;
     outline: none;
-    background: var(--bg-pri);
+    background: var(--amber);
     box-shadow: var(--shadow);
     color: var(--txt-pri);
+    font-size: 20px;
   }
   & input[type='submit']:hover {
-    background: var(--accent);
+    background: var(--navy);
     cursor: pointer;
+    color: var(--white);
   }
 }
 
@@ -743,6 +616,7 @@ footer {
   align-items: center;
   justify-content: center;
   min-height: 90vh;
+  margin: 80px 0px 20px 0px;
   & .forms {
     width: 500px;
     display: flex;
@@ -751,7 +625,7 @@ footer {
     background: var(--bg-sec);
     border-radius: 10px;
     box-shadow: var(--shadow);
-    margin: 20px;
+    border: 1px solid var(--amber);
     & form {
       width: 95%;
       display: flex;
@@ -762,8 +636,9 @@ footer {
       & h2 {
         color: var(--txt-pri);
         display: flex;
-        align-items: center;
-        gap: 2px;
+        gap: 5px;
+        text-transform: capitalize;
+        font-weight: 300;
         & img {
           height: 30px;
           width: 30px;
@@ -771,13 +646,12 @@ footer {
       }
       & label {
         width: 100%;
-        height: 40px;
+        height: 50px;
         display: flex;
         align-items: center;
         gap: 5px;
-        background: var(--bg-pri);
+        background: var(--amber);
         border-radius: 5px;
-        box-shadow: var(--shadow);
         padding-left: 10px;
         & select {
           width: 100%;
@@ -802,18 +676,26 @@ footer {
           color: var(--txt-pri);
           height: 100%;
           outline: none;
+          font-size: 18px;
         }
       }
       & input[type='submit'] {
         width: 100%;
-        height: 40px;
+        height: 50px;
         outline: none;
         border: none;
         border-radius: 5px;
+        background: var(--amber);
+        margin-top: 10px;
       }
       & input[type='submit']:hover {
         background: var(--accent);
         cursor: pointer;
+      }
+      & input::placeholder{
+        color: var(--navy);
+        font-size: 18px;
+        text-transform: capitalize;
       }
     }
   }
@@ -823,10 +705,11 @@ footer {
   height: 100vh;
   width: 100%;
   background: transparent;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
   position: absolute;
   top: 0;
+  left: 0;
   z-index: 200;
   & .close {
     position: absolute;
@@ -954,10 +837,10 @@ footer {
   margin-bottom: 50px;
   & .next,
   .prev {
-    height: 30px;
+    height: 40px;
     width: 100px;
     padding: 5px 10px;
-    background: var(--bg-sec);
+    background: var(--amber);
     box-shadow: var(--shadow);
     display: flex;
     align-items: center;
@@ -966,74 +849,75 @@ footer {
     color: var(--txt-pri);
     text-decoration: none;
   }
+  & .prev.active, .next.active{
+    background: var(--navy);
+    color: white;
+  }
   & .numbers {
     display: flex;
     gap: 5px;
     & a {
-      height: 30px;
-      width: auto;
-      padding: 2px;
-      background: var(--bg-sec);
+      height: 40px;
+      width: 40px;
+      background: var(--amber);
       box-shadow: var(--shadow);
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 5px;
       text-decoration: none;
-      color: var(--txt-pri);
+      font-size: 20px;
+      color: var(--navy);
     }
   }
 }
+
 .pages-to-display {
-  width: 100%;
-  display: flex;
+  height: 60px;
   align-items: center;
-  justify-content: flex-end;
-  padding: 10px;
-  & label {
-    font-size: 18px;
+  padding-left: 20px;
+  & form {
+    width: 300px;
+    background: var(--amber);
+    border-radius: 5px;
+    height: 100%;
     display: flex;
     align-items: center;
-    gap: 5px;
-    & input {
-      width: 40px;
-      height: 40px;
-      outline: none;
-      background: var(--bg-sec);
-      box-shadow: var(--shadow);
-      border-radius: 10px;
-      color: var(--txt-pri);
+    justify-content: center;
+    & label {
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       text-align: center;
-      border: none;
-    } /* Chrome, Safari, Edge, Opera */
-    & input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
+      gap: 10px;
+      & input {
+        height: 70%;
+        width: 20px;
+      }
+      /*& input::-webkit-meter-bar{
+        display: none;
+      }*/
     }
   }
 }
-.numbers.active a {
-  background: var(--accent);
-}
+
 .scroll-top {
   position: fixed;
-  top: 90%;
-  right: 20px;
-  background: var(--accent);
-  color: var(--txt-pri);
-  width: 50px;
+  z-index: 200;
   height: 50px;
-  font-size: 20px;
+  width: 50px;
+  background: var(--amber);
+  border: 1px solid var(--navy);
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: 5px;
+  right: 5px;
+  bottom: 5px;
   cursor: pointer;
+  visibility: visible;
 }
+
 @media (max-width: 750px) {
   nav {
     display: flex;
@@ -1072,7 +956,7 @@ footer {
       width: 40px;
       padding: 1px;
       border-radius: 10px;
-      background: var(--bg-pri);
+      background: var(--amber);
       display: flex;
       justify-content: flex-start;
       box-shadow: var(--shadow);
@@ -1104,7 +988,9 @@ footer {
   }
 
   .welcome {
-    font-size: 15px;
+    font-size: 12px;
+    text-align: center;
+    width: 100%;
   }
 
   .date {
@@ -1115,15 +1001,14 @@ footer {
     gap: 10px;
     & h2 {
       width: 100%;
-      height: auto;
-      padding: 5px;
+      height: 50px;
       background: var(--bg-sec);
       box-shadow: var(--shadow);
       border-radius: 5px;
-      padding-left: 10px;
+      padding-left: 5px;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 5px;
       font-size: 15px;
       & img {
         height: 30px;
@@ -1140,7 +1025,7 @@ footer {
         justify-content: center;
         box-shadow: var(--shadow);
         border-radius: 5px;
-        font-size: 15px;
+        font-size: 12px;
       }
       & a:hover {
         background: var(--accent);
@@ -1150,7 +1035,7 @@ footer {
 
   /* form style */
   header {
-    height: 100vh;
+    height: auto;
     width: 100%;
     display: flex;
     align-items: center;
@@ -1187,6 +1072,7 @@ footer {
         flex-direction: column;
         z-index: 90;
         height: 100%;
+        padding: 10px;
         & .name {
           display: flex;
           background: transparent;
@@ -1199,12 +1085,12 @@ footer {
           }
         }
         & .icon {
+          width: 100%;
           display: flex;
           align-items: center;
           flex-direction: column;
           justify-content: center;
           gap: 10px;
-          width: 90%;
           & img {
             height: 40px;
             width: 40px;
@@ -1215,7 +1101,7 @@ footer {
             text-transform: capitalize;
             display: flex;
             align-items: center;
-            gap: 2px;
+            gap: 10px;
             & span {
               height: 3px;
               width: 50px;
@@ -1223,18 +1109,23 @@ footer {
             }
           }
           & h3 {
+            width: 100%;
             color: var(--txt-pri);
             font-size: 10px;
             text-transform: capitalize;
             display: flex;
             align-items: center;
-            gap: 2px;
+            gap: 5px;
             & a {
-              padding: 0px 10px 0px 10px;
-              color: blue;
+              padding: 2px 5px 2px 5px;
+              color: var(--navy);
               display: flex;
               align-items: center;
+              text-decoration: none;
               gap: 5px;
+              background: var(--amber);
+              border-radius: 2px;
+
               & img {
                 height: 20px;
                 width: 20px;
@@ -1250,29 +1141,30 @@ footer {
         & label {
           display: flex;
           align-items: center;
-          gap: 10px;
+          gap: 5px;
           height: 40px;
           width: 100%;
-          background: var(--bg-pri);
-          box-shadow: var(--shadow);
           border-radius: 5px;
           & img {
-            height: 30px;
-            width: 30px;
-            margin-left: 10px;
+            height: 100;
+            width: 40px;
           }
           & input {
             width: 100%;
             height: 100%;
             outline: none;
             border: none;
-            background: transparent;
+            background: var(--amber);
             color: var(--txt-sec);
             font-size: 15px;
             text-transform: lowercase;
+            border-left: 1px solid var(--navy-light);
+            color: var(--navy);
           }
           & input::placeholder {
-            font-size: 10px;
+            font-size: 15px;
+            text-transform: capitalize;
+            color: var(--navy);
           }
         }
         & input[type='submit'] {
@@ -1282,11 +1174,11 @@ footer {
           border: none;
           outline: none;
           font-size: 18px;
-          background: var(--bg-pri);
-          color: var(--txt-pri);
+          background: transparent;
+          background: var(--amber);
+          color: var(--bg-sec);
           box-shadow: var(--shadow);
           font-weight: bolder;
-          font-family: cursive;
           cursor: pointer;
         }
         & input[type='submit']:hover {
@@ -1297,28 +1189,7 @@ footer {
     }
   }
 
-  .welcome{
-    font-size: 1px;
-  }
-  /* footer */
-  footer {
-    background: var(--bg-sec);
-    width: 100%;
-    height: auto;
-    padding: 10px 10px 10px 10px;
-    box-shadow: var(--shadow);
-    position: relative;
-    & h2 {
-      color: var(--txt-pri);
-      font-size: 15px;
-    }
-    & a {
-      color: blue;
-      font-weight: bolder;
-      font-size: 15px;
-    }
-  }
-
+  /* student dash */
   .details {
     width: 100%;
     display: flex;
@@ -1327,8 +1198,9 @@ footer {
     padding: 10px;
     & div {
       width: 100%;
-      color: var(--txt-pri);
-      background: var(--bg-sec);
+      color: var(--bg-sec);
+      text-transform: capitalize;
+      background: var(--amber);
       border-radius: 5px;
       height: 60px;
       display: flex;
@@ -1337,7 +1209,7 @@ footer {
       padding-left: 10px;
       padding: 5px;
       box-shadow: var(--shadow);
-      font-size: 18px;
+      font-size: 15px;
       & img {
         height: 30px;
         width: 30px;
@@ -1351,15 +1223,201 @@ footer {
     }
   }
 
+  .t-holder {
+    width: 100%;
+    padding: 10px;
+  }
+  .t-holder .tutorial {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background: var(--bg-sec);
+    color: var(--txt-pri);
+    box-shadow: var(--shadow);
+    & h1,
+    h2,
+    h3 {
+      font-size: 15px;
+    }
+    & ol {
+      padding-left: 30px;
+    }
+    & .red {
+      color: rgb(196, 12, 12);
+    }
+  }
+
   .res-holder {
     width: 100%;
     padding: 10px;
     & h2 {
       color: var(--txt-sec);
-      font-size: 18px;
+      font-size: 15px;
+      text-align: center;
     }
     & canvas {
       width: 100%;
+    }
+  }
+
+  .sdash {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+    .dept {
+      text-decoration: none;
+      position: relative;
+      z-index: 100;
+      height: 70px;
+      width: 100%;
+      border-radius: 5px;
+      overflow: hidden;
+      background: var(--amber);
+      color: var(--bg-sec);
+      box-shadow: var(--shadow);
+      & .department {
+        font-size: 18px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        text-transform: capitalize;
+        & img {
+          height: 25px;
+          width: 25px;
+        }
+      }
+      & .stat {
+        font-size: 12px;
+        text-transform: uppercase;
+        position: absolute;
+        bottom: 2px;
+        right: 2px;
+      }
+      & .percentage {
+        font-size: 15px;
+        position: absolute;
+        bottom: 2px;
+        left: 2espx;
+      }
+    }
+    & .dept.complete::before {
+      content: '';
+      position: absolute;
+      z-index: -100;
+      background: rgb(115, 237, 115);
+      height: 100%;
+      width: 100%;
+      animation: complete 2s linear;
+    }
+  }
+  .adash {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    & a {
+      width: 49%;
+      background: var(--bg-sec);
+      min-height: 60px;
+      color: var(--txt-pri);
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+      text-align: center;
+      padding: 10px;
+      font-size: 15px;
+      text-decoration: none;
+    }
+    & a:hover {
+      background: var(--accent);
+      font-size: 18px;
+    }
+  }
+
+  @keyframes complete {
+    from {
+      transform: translateY(70px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .dept_details {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    & .lost {
+      width: 100%;
+      padding: 10px 5px;
+      background: var(--bg-sec);
+      box-shadow: var(--shadow);
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      & h2 {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 15px;
+        text-transform: capitalize;
+        & img {
+          height: 30px;
+          width: 30px;
+        }
+      }
+      & ol {
+        padding-left: 40px;
+      }
+    }
+    & .status,
+    .payment {
+      width: 100%;
+      padding-left: 2px;
+      background: var(--bg-sec);
+      box-shadow: var(--shadow);
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      & h2 {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        height: auto;
+        padding: 2px;
+        font-size: 15px;
+        text-transform: capitalize;
+        & img {
+          height: 30px;
+          width: 30px;
+        }
+      }
+      & a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        height: 60px;
+        font-size: 18px;
+        color: blue;
+        text-decoration: none;
+
+        & img {
+          height: 30px;
+          width: 30px;
+        }
+      }
     }
   }
 
@@ -1379,35 +1437,37 @@ footer {
       background: var(--bg-sec);
       box-shadow: var(--shadow);
       border-radius: 5px;
-      & table {
-        width: 100%;
-        margin: 10px auto;
-        margin-top: 5px;
-        & th {
-          text-align: left;
-          text-transform: capitalize;
-          padding-left: 2px;
-          background: var(--bg-pri);
-          border-radius: 5px;
-          box-shadow: var(--shadow);
-          font-size: 10px;
+    }
+    & table {
+      width: 100%;
+      margin: auto;
+      border-radius: 10px;
+      padding: 10px 5px 10px 5px;
+      & thead,
+      tbody {
+        text-align: left;
+        text-transform: capitalize;
+        padding-left: 2px;
+        background: var(--bg-pri);
+        box-shadow: var(--shadow);
+      }
+      & td,
+      th {
+        text-align: left;
+        text-transform: capitalize;
+        padding-left: 2px;
+        background: var(--bg-pri);
+        box-shadow: var(--shadow);
+        border-radius: 3px;
+        padding: 5px;
+        border: 1px solid var(--amber);
+        & a {
+          text-decoration: none;
         }
-        & td {
-          background: var(--bg-pri);
-          text-align: left;
-          text-transform: capitalize;
-          padding-left: 2px;
-          border-radius: 5px;
-          box-shadow: var(--shadow);
-          font-size: 10px;
-          & a {
-            color: white;
-            text-decoration: none;
-          }
-          & img {
-            height: 40px;
-            width: 40px;
-          }
+        & img {
+          height: 40px;
+          width: 40px;
+          border-radius: 50%;
         }
       }
     }
@@ -1443,7 +1503,6 @@ footer {
         background: var(--bg-pri);
         border-radius: 5px;
         box-shadow: var(--shadow);
-        font-size: 10px;
       }
       & td {
         background: var(--bg-pri);
@@ -1452,7 +1511,6 @@ footer {
         padding-left: 2px;
         border-radius: 5px;
         box-shadow: var(--shadow);
-        font-size: 10px;
         & a {
           color: white;
           text-decoration: none;
@@ -1533,7 +1591,6 @@ footer {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-
     & .forms {
       width: 95%;
       display: flex;
@@ -1547,8 +1604,8 @@ footer {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 15px;
-        padding: 10px 0px 20px 0px;
+        gap: 5px;
+        padding: 10px 0px 10px 0px;
         & h2 {
           color: var(--txt-pri);
           display: flex;
@@ -1561,13 +1618,12 @@ footer {
         }
         & label {
           width: 100%;
-          height: 40px;
+          height: 50px;
           display: flex;
           align-items: center;
           gap: 5px;
           background: var(--bg-pri);
-          border-radius: 5px;
-          box-shadow: var(--shadow);
+          border-radius: 2px;
           padding-left: 10px;
           & select {
             width: 100%;
@@ -1592,6 +1648,7 @@ footer {
             color: var(--txt-pri);
             height: 100%;
             outline: none;
+            padding-left: 10px;
           }
         }
         & input[type='submit'] {
@@ -1624,8 +1681,9 @@ footer {
       right: 5px;
       display: flex;
       color: var(--txt-pri);
-      height: 20px;
-      width: 100px;
+      height: 30px;
+      padding: 4px;
+      width: auto;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1653,6 +1711,7 @@ footer {
       flex-direction: column;
       gap: 10px;
       align-items: center;
+      text-align: center;
       & button {
         height: 40px;
         width: 150px;
@@ -1673,11 +1732,12 @@ footer {
     & .alert_title {
       position: absolute;
       width: 100%;
-      top: 30px;
+      top: 50px;
       text-align: center;
       text-transform: uppercase;
       color: green;
-      font-size: 25px;
+      font-size: 20px;
+      text-align: center;
     }
   }
 
@@ -1738,12 +1798,12 @@ footer {
     align-items: center;
     justify-content: center;
     gap: 5px;
-    & .next,
-    .prev {
-      height: 30px;
+    margin-top: 20px;
+    & .next, .prev {
+      height: 40px;
       width: 100px;
       padding: 5px 10px;
-      background: var(--bg-sec);
+      background: var(--amber);
       box-shadow: var(--shadow);
       display: flex;
       align-items: center;
@@ -1756,9 +1816,9 @@ footer {
       display: flex;
       gap: 5px;
       & a {
-        height: 30px;
-        width: auto;
-        background: var(--bg-sec);
+        height: 40px;
+        width: 40px;
+        background: var(--amber);
         box-shadow: var(--shadow);
         display: flex;
         align-items: center;
@@ -1766,7 +1826,6 @@ footer {
         border-radius: 5px;
         text-decoration: none;
         color: var(--txt-pri);
-        font-size: 12px;
       }
     }
   }

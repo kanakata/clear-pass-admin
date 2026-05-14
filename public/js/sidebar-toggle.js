@@ -4,7 +4,7 @@ let option = localStorage.getItem('sidebar');
 if (option !== '') {
   sidebar.classList.toggle('small-screen');
 }
-//check if a cookie existsF
+//check if a cookie exists.
 logo_close.addEventListener("click", () => {
     if (option == "") {
         localStorage.setItem('sidebar', 'small-screen');

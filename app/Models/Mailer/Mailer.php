@@ -1,39 +1,44 @@
 <?php
-namespace App\Models\Mailer;
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+namespace App\Models\Mailer{
 
-// 1. Load Composer's autoloader
-require ROOT .  '/vendor/autoload.php';
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
 
-class Mailer{
-    public static function Mail(){
-        $mail = new PHPMailer(true);
+    // 1. Load Composer's autoloader
+    require ROOT .  '/vendor/autoload.php';
 
-        try {
-            // 2. Server settings
-            $mail->isSMTP();                                            // Send using SMTP
-            $mail->Host       = 'https://thirdly-ateliotic-katina.ngrok-free.dev/PROJECTS/PORTFOLIO/INCLOMPLETE/CLEARANCE%20SITES/PEGPEM_2.0_ADMIN/';                     // Set the SMTP server
-            $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-            $mail->Username   = 'patrick376@gmail.com';               // SMTP username
-            $mail->Password   = 'your_app_password';                    // SMTP password
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption
-            $mail->Port       = 587;                                    // TCP port to connect to
+    class Mailer
+    {
+        public function Mail()
+        {
 
-            // 3. Recipients
-            $mail->setFrom('patrick376@gmail.com', 'patrick');
-            $mail->addAddress('patrick376@gmail.com', 'patrick');     // Add a recipient
+            $mail = new PHPMailer(true);
 
-            // 4. Content
-            $mail->isHTML(true);                                        // Set email format to HTML
-            $mail->Subject = 'PHPMailer Test';
-            $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-            $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+            try {
+                // 2. Server settings
+                $mail->isSMTP();                                            // Send using SMTP
+                $mail->Host       = 'https://thirdly-ateliotic-katina.ngrok-free.dev/PROJECTS/PORTFOLIO/INCLOMPLETE/CLEARANCE%20SITES/PEGPEM_2.0_ADMIN/';                     // Set the SMTP server
+                $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+                $mail->Username   = 'patrick376@gmail.com';               // SMTP username
+                $mail->Password   = 'your_app_password';                    // SMTP password
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption
+                $mail->Port       = 587;                                    // TCP port to connect to
 
-            $mail->send();
-            echo 'Message has been sent';
-        } catch (Exception $e) {
-            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+                // 3. Recipients
+                $mail->setFrom('patrick376@gmail.com', 'patrick');
+                $mail->addAddress('patrick376@gmail.com', 'patrick');     // Add a recipient
+
+                // 4. Content
+                $mail->isHTML(true);                                        // Set email format to HTML
+                $mail->Subject = 'PHPMailer Test';
+                $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+                $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+                $mail->send();
+                echo 'Message has been sent';
+            } catch (Exception $e) {
+                echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+            }
         }
     }
 }
