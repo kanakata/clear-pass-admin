@@ -1,5 +1,5 @@
 .env
-.log
-php.ini
-test.php
-.htaccess
+.composer.json
+.composer.lock
+/vendor
+/sql
